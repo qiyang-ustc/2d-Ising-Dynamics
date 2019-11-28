@@ -1,10 +1,9 @@
 using Zygote
 using DelimitedFiles
-
-input_data = open("collapse.dat",'r')
+input_file ="collapse.dat"
 # This file should be prepared as following format
 # np_1 np_2... np_{np}...  f({p},x1) f({p},x2) f({p},x3)...
-data = readdlm(input_data,Float64)
+data = readdlm(input_file,Float64)
 
 np = 2  #number of parameters used for fitting 
 nv = 3  #number of variables need to fit
