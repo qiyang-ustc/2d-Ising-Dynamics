@@ -1,0 +1,92 @@
+% !TEX program = xelatex
+
+\documentclass[a4paper]{article}
+%% Language and font encodings
+\usepackage[english]{babel}
+\usepackage[utf8x]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{wrapfig}
+\usepackage{subcaption}
+\usepackage{graphics}
+\usepackage{booktabs}
+\usepackage{multirow}
+\usepackage[table]{xcolor}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{amsfonts}
+\usepackage{tweaklist}
+\usepackage{blindtext}
+%% Useful packages
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage[colorinlistoftodos]{todonotes}
+\usepackage[colorlinks=true, allcolors=blue]{hyperref}
+\usepackage{xeCJK}
+\usepackage{url}
+%\usepackage{emumerates}
+%% Sets page size and margins
+\usepackage[a4paper,top=2cm,bottom=2cm,left=1cm,right=3cm,marginparwidth=2cm]{geometry}
+
+\begin{document}
+\setlength{\leftskip}{20pt}
+
+\title{2D-Ising critical fluctuation}
+\author{仰旗，学号：{\it 201928000807088}}
+%%%%% ------------------------ %%%%% 
+
+ \maketitle
+
+% \begin{abstract}
+% \end{abstract}
+% \tableofcontents
+\section{Introduction}
+This project mainly investigate 2D-Ising system near the critical point. We use Markov Chain Monte Carlo method
+with Metropolis updates as dynamics of this system and extrapolate the result from finite size system to infinity size
+system by tools named Finite Size Scaling.
+\newline
+The 2D-Ising system is always a classical example in statistical physics. The most important property of this system 
+near critical point is the space-correlation would be divergent and fluctuation with different span could be treatedd 
+equivalently. In other words, all configurations are near equilibrium. As a result, we can do linear response analysis 
+without any approximation. It is quite straightforward that the relaxtion behavior coule be related to information of 
+fluctuation in critical points.
+\newline
+This project is coded with Julia and Python. The code is published on Github: 
+\url{https://github.com/qiyang-ustc/2d-Ising-Dynamics}
+
+\section{Method}
+The model and the method in this report mainly follow the article given by Ito in 1993.\url{https://arxiv.org/abs/cond-mat/9302009}
+In that article, Ito studied 3D-Ising model but did not related the result with fluctuation-dissipation theorem.\newline
+\subsection{Dynamics}
+The dynamics in this project is given by Metropolis Method. Each steps, we pick up a spin sequentially
+
+\section{Theoretical analysis}
+The Hamiltonian of oußr system is: $s_i$ could be $+1$ or $-1$.
+$$\mathcal{H}=\sum_{\left\langle i,j\right\rangle}-Js_is_j-\sum_ihs_i$$
+We first prepare our system at $h\rightarrow\infty$, which is equivalent to say:
+$$\mathcal{H} = \mathcal{H}_0-Nhm\theta(-t)$$
+where N is the number of total spins and m is order parameter $m=\sum s_i/N$. T is time. $\theta(t)=1$ if $t>0$ else $theta(t)=0$
+It is obvious that the expectation for order parameter is zero for non-disturbed state.
+And the system is prepare at $m(0)=1$.\newline
+Now, we use linear response theory to analyze this system: when $t=0$, The wight is 
+$$W(x,t=0) = \frac{e^{-\beta H}}{Z}=\frac{e^{-\beta H_0}\times e^{\beta Nmh}}{\sum_{s}e^{-\beta H_0+\beta Nmh}}$$
+So,
+$$=\frac{e^{-\beta H_0}(1+\beta Nhm)}{Z}-\frac{e^{-\beta H_0}}{Z^2}e^{-\beta H_0}Nhm=W_0(x,0)\times(1+\beta Nh(m-\left\langle m\right\rangle))$$
+We can conclude that:
+$$\rho(t=0)+\Delta\rho(t=0)=W(x,0)=W_0(x,0)(1+\beta Nh\delta m) $$
+$$\Delta\rho(t) = \beta NH\delta mW_0(t)$$
+If we donated the time-correlation of order parameter by $A(t)$ which means:
+$$A(t)=\left\langle\delta m(t)\delta m(0)\right\rangle$$
+Generalized susceptibility $\chi$ in linear response theory:
+$$\left\langle \delta m(t)\right\rangle=\int_{\infty}^{t}\chi(t-t')\theta(-t')Nhdt'$$
+Besides, by definition
+$$\left\langle \delta m(t)\right\rangle=Tr(\Delta\rho(t)\hat{m})=Tr(\Delta\rho(0)\hat{m}(t))=\beta Nh \left\langle m(t)m(0)\right\rangle=\beta NhA(t)$$
+Take derivatives of the equation:
+$$\beta NhA(t)=\left\langle m(t)\right\rangle=\int_{-\infty}^{t}\chi(t-t')Nh\theta(-t')dt'$$
+We can get:
+$$\chi(t)= -\beta\dot{A}(t)\quad if\quad t>0$$
+% -----------------------------------Appendix----------------------------------------
+%\newpage
+% -----------------------------------REFERENCE----------------------------------------
+\bibliographystyle{alpha}
+% \bibliography{sample}
+\end{document}

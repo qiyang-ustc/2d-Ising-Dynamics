@@ -1,15 +1,15 @@
 using Random
 using Statistics
 using DelimitedFiles
+const L = parse(Int,ARGS[1])
+const dJ = parse(Float64,ARGS[2])
 
 const RANDOM_SEED = 123
 const D = 2
-const L = 100 
-const NSAMP = 2000  #simulated system
-const NBLCK = 1024  #simulation time
+const NSAMP = parse(Int,ARGS[3])  #simulated system
+const NBLCK = 16384  #simulation time
 const EPSILON = 1E-14
 const J0 = 0.4406867935
-const dJ = 0.0
 # const DJ = J0 .+ collect(Float64,-1:0.5:1)
 const Jcp = J0 + dJ
 
@@ -71,8 +71,9 @@ for iblck=1:1:NBLCK
 end
 
 ave = mean(m,dims=1)
-sdm = std(m,dims=1)  #std is occupied
+err = std(m,dims=1)/sqrt(NBLCK)  #std is occupied
 f = open("./Data/$L,$dJ.dat","w")
 writedlm(f,ave)
-writedlm(f,sdm)
+writedlm(f,err)
 close(f)
+
