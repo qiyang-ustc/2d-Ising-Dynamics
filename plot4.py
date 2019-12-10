@@ -5,7 +5,7 @@ import os
 import platform
 
 L=4
-dJ_set=['-0.08','-0.04','-0.02','-0.01','0.0','0.01','0.02','0.04','0.08']
+dJ_set=['-0.08','-0.04','-0.02','-0.01','-0.005','0.0','0.005','0.01','0.02','0.04','0.08']
 
 color_map_name =  'plasma'
 color_interval = 20
@@ -41,7 +41,7 @@ for i in range(len(dJ_set)):
     ax2.set_xlabel("t")
     ax2.set_ylabel("M")
     ax2.set_ylim(-0.05,1.0)
-    ax2.set_xlim(0,200)
+    ax2.set_xlim(0,800)
 
     ave = np.log(np.abs(data[0,:])+0.0001)
     err = np.log(data[1,:])
@@ -54,7 +54,7 @@ for i in range(len(dJ_set)):
     ax3.set_xlabel("t")
     ax3.set_ylabel("log(M)")
     ax3.set_ylim(-4,0)
-    ax3.set_xlim(0,200)
+    ax3.set_xlim(0,800)
 
 
 plt.savefig('./figure/fig{}.png'.format(L))

@@ -7,7 +7,7 @@ const dJ = parse(Float64,ARGS[2])
 const RANDOM_SEED = 123
 const D = 2
 const NSAMP = parse(Int,ARGS[3])  #simulated system
-const NBLCK = 16384  #simulation time
+const NBLCK = 8192  #simulation time
 const EPSILON = 1E-14
 const J0 = 0.4406867935
 # const DJ = J0 .+ collect(Float64,-1:0.5:1)
@@ -23,7 +23,8 @@ neib = zeros(Int,Vol,4)
 
 # We only sample order-parameter in this program.
 m = zeros(Float64,NBLCK,NSAMP)
-
+m2 = zeros(Float64,NBLCK,NSAMP)
+m4 = zeros(Float64,NBLCK,NSAMP)
 # 1up 2down 3left 4right
 # set neighbourhood matrix
 for i=1:1:Lx
@@ -57,23 +58,34 @@ for iblck=1:1:NBLCK
         for i = 1:1:Lx
             for j = 1:1:Ly
                 sum_spin = 0
-                index = (i-1)*Lx + j
+                #index = (i-1)*Lx + j
+                index = rand(1:Lx*Ly)
                 for k = 1:1:4
                     sum_spin += spin[neib[index,k]]
                 end
-                if rand()<exp(-2*spin[index]*sum_spin*Jcp)
+                #if rand()<exp()  #We should not use Metropolis here
+                dE = exp(-2*spin[index]*sum_spin*Jcp)
+                if rand()<dE/(1+dE)
                     spin[index] = -spin[index]
                 end
             end
         end
         m[iblck,isamp] = mean(spin)
+        m2[iblck,isamp] = m[iblck,isamp]^2
+        m4[iblck,isamp] = m[iblck,isamp]^4
     end
 end
 
-ave = mean(m,dims=1)
-err = std(m,dims=1)/sqrt(NBLCK)  #std is occupied
+ave_m = mean(m,dims=1)
+ave_m2 =mean(m2,dims=1)
+ave_m4 =mean(m4,dims=1)
+ave_binder = ave_m4./(ave_m2).^2
+# err = std(m,dims=1)/sqrt(NBLCK)  #std is occupied
 f = open("./Data/$L,$dJ.dat","w")
-writedlm(f,ave)
-writedlm(f,err)
+writedlm(f,ave_m)
+writedlm(f,ave_m2)
+writedlm(f,ave_m4)
+writedlm(f,ave_binder)
+# writedlm(f,err)
 close(f)
 

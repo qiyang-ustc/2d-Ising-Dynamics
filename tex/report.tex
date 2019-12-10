@@ -55,9 +55,7 @@ This project is coded with Julia and Python. The code is published on Github:
 
 \section{Method}
 The model and the method in this report mainly follow the article given by Ito in 1993.\url{https://arxiv.org/abs/cond-mat/9302009}
-In that article, Ito studied 3D-Ising model but did not related the result with fluctuation-dissipation theorem.\newline
-\subsection{Dynamics}
-The dynamics in this project is given by Metropolis Method. Each steps, we pick up a spin sequentially
+In that article, Ito studied 3D-Ising model but did not related the result with fluctuation-dissipation theorem.
 
 \section{Theoretical analysis}
 The Hamiltonian of oußr system is: $s_i$ could be $+1$ or $-1$.
@@ -84,6 +82,21 @@ Take derivatives of the equation:
 $$\beta NhA(t)=\left\langle m(t)\right\rangle=\int_{-\infty}^{t}\chi(t-t')Nh\theta(-t')dt'$$
 We can get:
 $$\chi(t)= -\beta\dot{A}(t)\quad if\quad t>0$$
+
+\subsection{Dynamics}
+The dynamics in this project is given by Heat Bath Method. Each steps, we pick up a spin sequentially or randomly.
+The reason of using Heat Bath updating instead of Metropolis is a little subtle:
+The differece between Heat Bath and Metropolis is, in Metropolis, the probability of updating is:
+$$P_M(s_i\rightarrow -s_i)=min\{1,e^{-2\sum_{j \in \left\langle i,j \right\rangle}\beta Js_js_i}\}$$
+While the probability of updating in Heat Bath is:
+$$P_{HB}(s_i\rightarrow -s_i)=\frac{e^{\sum_{j \in \left\langle i,j \right\rangle}\beta Js_js_i}}{e^{\sum_{j \in \left\langle i,j \right\rangle}\beta Js_js_i}+e^{-\beta J\sum_{j \in \left\langle i,j \right\rangle}s_js_i}}$$
+Though these two methods both satisfy Detailed Balance, comparing to Heat Bath, Metropolis expand the probability of 
+updating by a const: $P_M(s_i\rightarrow -s_i))=P_{HB}(s_i\rightarrow -s_i)/P_{HB}(-s_i\rightarrow s_i)$. 
+And $P_{HB}(-s_i\rightarrow s_i)$ is configuration depended. Metropolis actually accelerate the updating, what it does 
+is equivalent to rescale time-axis.
+
+
+
 % -----------------------------------Appendix----------------------------------------
 %\newpage
 % -----------------------------------REFERENCE----------------------------------------

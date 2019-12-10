@@ -2,8 +2,11 @@ import os
 import platform
 import time
 
-L=32
-dJ_set=['-0.08','-0.04','-0.02','-0.01','0.0','0.01','0.02','0.04','0.08']
+L=8
+Jnormalization = 2
+dJ_set=[-0.08,-0.04,-0.02,-0.01,-0.005,0.0,0.005,0.01,0.02,0.04,0.08]
+for i in range(len(dJ_set)):
+    dJ_set[i] = dJ_set[i]/Jnormalization
 steps=1600
 
 for dJ in dJ_set:

@@ -22,7 +22,7 @@ for i in range(len(L_set)):
         color = [color_set[i*len(L_set)+j]]
         data = np.loadtxt('./Data/{},{}.dat'.format(L,dJ))
         logm = np.log(data[0,0:T])
-        ave = np.log(np.abs(data[0,:])+0.0001)/math.exp(alpha[i]*eval(J_set[j]))
+        ave = np.log(np.abs(data[0,:])+0.0001)/(math.exp(5.62*math.exp(-11.0*eval(J_set[j]))))
         err = np.log(data[1,:])
         tim = np.array([i+1 for i in range(ave.size)])
         # ax3.errorbar(tim,ave,err,marker='o',label="L={},dJ={}".format(L,dJ))
@@ -33,7 +33,7 @@ ax1.legend(loc='best')
 ax1.set_title("M(t,L,J)")
 ax1.set_xlabel("t")
 ax1.set_ylabel("log(M)")
-ax1.set_ylim(-5,0)
+ax1.set_ylim(-0.05,0)
 ax1.set_xlim(0,800)
 
 plt.savefig('./figure/collapse.png')

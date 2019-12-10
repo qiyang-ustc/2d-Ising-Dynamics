@@ -5,7 +5,7 @@ import os
 import platform
 
 L=8
-dJ_set=['-0.08','-0.04','-0.02','-0.01','0.0','0.01','0.02','0.04','0.08']
+dJ_set=[-0.04,-0.02,-0.01,-0.005,0.0,0.005,0.01,0.02,0.04]
 
 color_map_name =  'plasma'
 color_interval = 20
@@ -30,17 +30,6 @@ for i in range(len(dJ_set)):
     ax1.set_ylim(-5,0)
     ax1.set_xlim(0,6)
 
-    ave = data[0,:]
-    # std = np.log(data[:,1])
-    tim = np.array([i+1 for i in range(ave.size)])
-    ax2.scatter(tim,ave,s=20,c=color,marker='o',label="L={},dJ={}".format(L,dJ))
-
-    ax2.legend(loc='best')
-    ax2.set_title("M(t,L,J)")
-    ax2.set_xlabel("t")
-    ax2.set_ylabel("M")
-    ax2.set_ylim(-0.05,1.0)
-    ax2.set_xlim(0,400)
 
     ave = np.log(np.abs(data[0,:])+0.0001)
     err = np.log(data[1,:])
@@ -53,7 +42,19 @@ for i in range(len(dJ_set)):
     ax3.set_xlabel("t")
     ax3.set_ylabel("log(M)")
     ax3.set_ylim(-5,0)
-    ax3.set_xlim(0,400)
+    ax3.set_xlim(0,800)
 
+    data = np.loadtxt('./Data/cor_{},{}.dat'.format(L,dJ))
+    ave = np.log(np.abs(data+0.000000000001))
+    tim = np.array([i+1 for i in range(ave.size)])
+
+    ax2.scatter(tim,ave,s=20,c=color,marker='o',label="L={},dJ={}".format(L,dJ))
+
+    ax2.legend(loc='best')
+    ax2.set_title("M(t,L,J)")
+    ax2.set_xlabel("t")
+    ax2.set_ylabel("M")
+    ax2.set_ylim(-3,0.0)
+    ax2.set_xlim(0,100)
 
 plt.savefig('./figure/fig{}.png'.format(L))
