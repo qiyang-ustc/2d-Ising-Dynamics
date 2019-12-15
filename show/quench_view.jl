@@ -28,7 +28,7 @@ end
 function run()
     t=0
     Jcp = 0.3
-    for i = 1:1:50
+    for i = 1:1:100
         metropolis(block,Jcp)
         p = heatmap(1:Lx,1:Ly,block)
         display(p)

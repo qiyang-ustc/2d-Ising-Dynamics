@@ -1,0 +1,167 @@
+
+signal (15): Terminated: 15
+in expression starting at /Users/yangqi/source/2d-Ising-Dynamics/cor.jl:56
+jl_lookup_generic_ at /Users/sabae/buildbot/worker/package_macos64/build/src/gf.c:0
+jl_apply_generic at /Users/sabae/buildbot/worker/package_macos64/build/src/gf.c:2182
+top-level scope at /Users/yangqi/source/2d-Ising-Dynamics/cor.jl:84
+jl_toplevel_eval_flex at /Users/sabae/buildbot/worker/package_macos64/build/src/toplevel.c:809
+jl_parse_eval_all at /Users/sabae/buildbot/worker/package_macos64/build/src/ast.c:873
+jl_load at /Users/sabae/buildbot/worker/package_macos64/build/src/toplevel.c:879 [inlined]
+jl_load_ at /Users/sabae/buildbot/worker/package_macos64/build/src/toplevel.c:886
+include at ./boot.jl:328 [inlined]
+include_relative at ./loading.jl:1094
+include at ./Base.jl:31
+exec_options at ./client.jl:295
+_start at ./client.jl:464
+true_main at /usr/local/bin/julia (unknown line)
+main at /usr/local/bin/julia (unknown line)
+unknown function (ip: 0xffffffffffffffff)
+Allocations: 799691560482 (Pool: 799691560389; Big: 93); GC: 557861
+
+signal (15): Terminated: 15
+in expression starting at /Users/yangqi/source/2d-Ising-Dynamics/cor.jl:56
+jl_apply_generic at /Users/sabae/buildbot/worker/package_macos64/build/src/gf.c:2190
+top-level scope at /Users/yangqi/source/2d-Ising-Dynamics/cor.jl:71
+jl_toplevel_eval_flex at /Users/sabae/buildbot/worker/package_macos64/build/src/toplevel.c:809
+jl_parse_eval_all at /Users/sabae/buildbot/worker/package_macos64/build/src/ast.c:873
+jl_load at /Users/sabae/buildbot/worker/package_macos64/build/src/toplevel.c:879 [inlined]
+jl_load_ at /Users/sabae/buildbot/worker/package_macos64/build/src/toplevel.c:886
+include at ./boot.jl:328 [inlined]
+include_relative at ./loading.jl:1094
+include at ./Base.jl:31
+exec_options at ./client.jl:295
+_start at ./client.jl:464
+true_main at /usr/local/bin/julia (unknown line)
+main at /usr/local/bin/julia (unknown line)
+unknown function (ip: 0xffffffffffffffff)
+Allocations: 803756861609 (Pool: 803756861516; Big: 93); GC: 560697
+
+signal (15): Terminated: 15
+in expression starting at /Users/yangqi/source/2d-Ising-Dynamics/cor.jl:56
+unknown function (ip: 0x1161959e2)
+top-level scope at /Users/yangqi/source/2d-Ising-Dynamics/cor.jl:70
+jl_toplevel_eval_flex at /Users/sabae/buildbot/worker/package_macos64/build/src/toplevel.c:809
+jl_parse_eval_all at /Users/sabae/buildbot/worker/package_macos64/build/src/ast.c:873
+jl_load at /Users/sabae/buildbot/worker/package_macos64/build/src/toplevel.c:879 [inlined]
+jl_load_ at /Users/sabae/buildbot/worker/package_macos64/build/src/toplevel.c:886
+include at ./boot.jl:328 [inlined]
+include_relative at ./loading.jl:1094
+include at ./Base.jl:31
+exec_options at ./client.jl:295
+_start at ./client.jl:464
+true_main at /usr/local/bin/julia (unknown line)
+main at /usr/local/bin/julia (unknown line)
+unknown function (ip: 0xffffffffffffffff)
+Allocations: 792614369372 (Pool: 792614369279; Big: 93); GC: 552924
+
+signal (15): Terminated: 15
+in expression starting at /Users/yangqi/source/2d-Ising-Dynamics/cor.jl:56
+getindex at ./array.jl:729
+unknown function (ip: 0x10d8148d1)
+top-level scope at /Users/yangqi/source/2d-Ising-Dynamics/cor.jl:67
+jl_toplevel_eval_flex at /Users/sabae/buildbot/worker/package_macos64/build/src/toplevel.c:809
+jl_parse_eval_all at /Users/sabae/buildbot/worker/package_macos64/build/src/ast.c:873
+jl_load at /Users/sabae/buildbot/worker/package_macos64/build/src/toplevel.c:879 [inlined]
+jl_load_ at /Users/sabae/buildbot/worker/package_macos64/build/src/toplevel.c:886
+include at ./boot.jl:328 [inlined]
+include_relative at ./loading.jl:1094
+include at ./Base.jl:31
+exec_options at ./client.jl:295
+_start at ./client.jl:464
+true_main at /usr/local/bin/julia (unknown line)
+main at /usr/local/bin/julia (unknown line)
+unknown function (ip: 0xffffffffffffffff)
+Allocations: 800288247847 (Pool: 800288247754; Big: 93); GC: 558278
+
+signal (15): Terminated: 15
+in expression starting at /Users/yangqi/source/2d-Ising-Dynamics/cor.jl:56
+jl_lookup_generic_ at /Users/sabae/buildbot/worker/package_macos64/build/src/gf.c:2137
+jl_apply_generic at /Users/sabae/buildbot/worker/package_macos64/build/src/gf.c:2182
+top-level scope at /Users/yangqi/source/2d-Ising-Dynamics/cor.jl:67
+jl_toplevel_eval_flex at /Users/sabae/buildbot/worker/package_macos64/build/src/toplevel.c:809
+jl_parse_eval_all at /Users/sabae/buildbot/worker/package_macos64/build/src/ast.c:873
+jl_load at /Users/sabae/buildbot/worker/package_macos64/build/src/toplevel.c:879 [inlined]
+jl_load_ at /Users/sabae/buildbot/worker/package_macos64/build/src/toplevel.c:886
+include at ./boot.jl:328 [inlined]
+include_relative at ./loading.jl:1094
+include at ./Base.jl:31
+exec_options at ./client.jl:295
+_start at ./client.jl:464
+true_main at /usr/local/bin/julia (unknown line)
+main at /usr/local/bin/julia (unknown line)
+unknown function (ip: 0xffffffffffffffff)
+Allocations: 824954619635 (Pool: 824954619543; Big: 92); GC: 575485
+
+signal (15): Terminated: 15
+in expression starting at /Users/yangqi/source/2d-Ising-Dynamics/cor.jl:56
+/ at ./float.jl:401 [inlined]
+exp at ./special/exp.jl:117
+unknown function (ip: 0x117be7d49)
+top-level scope at /Users/yangqi/source/2d-Ising-Dynamics/cor.jl:71
+jl_toplevel_eval_flex at /Users/sabae/buildbot/worker/package_macos64/build/src/toplevel.c:809
+jl_parse_eval_all at /Users/sabae/buildbot/worker/package_macos64/build/src/ast.c:873
+jl_load at /Users/sabae/buildbot/worker/package_macos64/build/src/toplevel.c:879 [inlined]
+jl_load_ at /Users/sabae/buildbot/worker/package_macos64/build/src/toplevel.c:886
+include at ./boot.jl:328 [inlined]
+include_relative at ./loading.jl:1094
+include at ./Base.jl:31
+exec_options at ./client.jl:295
+_start at ./client.jl:464
+true_main at /usr/local/bin/julia (unknown line)
+main at /usr/local/bin/julia (unknown line)
+unknown function (ip: 0xffffffffffffffff)
+Allocations: 798906219274 (Pool: 798906219182; Big: 92); GC: 557313
+
+signal (15): Terminated: 15
+in expression starting at /Users/yangqi/source/2d-Ising-Dynamics/cor.jl:56
+getindex at ./array.jl:729
+unknown function (ip: 0x1162608d1)
+top-level scope at /Users/yangqi/source/2d-Ising-Dynamics/cor.jl:67
+jl_toplevel_eval_flex at /Users/sabae/buildbot/worker/package_macos64/build/src/toplevel.c:809
+jl_parse_eval_all at /Users/sabae/buildbot/worker/package_macos64/build/src/ast.c:873
+jl_load at /Users/sabae/buildbot/worker/package_macos64/build/src/toplevel.c:879 [inlined]
+jl_load_ at /Users/sabae/buildbot/worker/package_macos64/build/src/toplevel.c:886
+include at ./boot.jl:328 [inlined]
+include_relative at ./loading.jl:1094
+include at ./Base.jl:31
+exec_options at ./client.jl:295
+_start at ./client.jl:464
+true_main at /usr/local/bin/julia (unknown line)
+main at /usr/local/bin/julia (unknown line)
+unknown function (ip: 0xffffffffffffffff)
+Allocations: 826412812680 (Pool: 826412812587; Big: 93); GC: 576502
+
+signal (15): Terminated: 15
+in expression starting at /Users/yangqi/source/2d-Ising-Dynamics/cor.jl:56
+top-level scope at /Users/yangqi/source/2d-Ising-Dynamics/cor.jl:67
+jl_toplevel_eval_flex at /Users/sabae/buildbot/worker/package_macos64/build/src/toplevel.c:809
+jl_parse_eval_all at /Users/sabae/buildbot/worker/package_macos64/build/src/ast.c:873
+jl_load at /Users/sabae/buildbot/worker/package_macos64/build/src/toplevel.c:879 [inlined]
+jl_load_ at /Users/sabae/buildbot/worker/package_macos64/build/src/toplevel.c:886
+include at ./boot.jl:328 [inlined]
+include_relative at ./loading.jl:1094
+include at ./Base.jl:31
+exec_options at ./client.jl:295
+_start at ./client.jl:464
+true_main at /usr/local/bin/julia (unknown line)
+main at /usr/local/bin/julia (unknown line)
+unknown function (ip: 0xffffffffffffffff)
+Allocations: 818230847962 (Pool: 818230847869; Big: 93); GC: 570794
+
+signal (15): Terminated: 15
+in expression starting at /Users/yangqi/source/2d-Ising-Dynamics/cor.jl:56
+jfptr_+_3755.clone_1 at /Applications/Julia-1.2.app/Contents/Resources/julia/lib/julia/sys.dylib (unknown line)
+top-level scope at /Users/yangqi/source/2d-Ising-Dynamics/cor.jl:67
+jl_toplevel_eval_flex at /Users/sabae/buildbot/worker/package_macos64/build/src/toplevel.c:809
+jl_parse_eval_all at /Users/sabae/buildbot/worker/package_macos64/build/src/ast.c:873
+jl_load at /Users/sabae/buildbot/worker/package_macos64/build/src/toplevel.c:879 [inlined]
+jl_load_ at /Users/sabae/buildbot/worker/package_macos64/build/src/toplevel.c:886
+include at ./boot.jl:328 [inlined]
+include_relative at ./loading.jl:1094
+include at ./Base.jl:31
+exec_options at ./client.jl:295
+_start at ./client.jl:464
+true_main at /usr/local/bin/julia (unknown line)
+main at /usr/local/bin/julia (unknown line)
+unknown function (ip: 0xffffffffffffffff)
+Allocations: 838913911943 (Pool: 838913911850; Big: 93); GC: 585223

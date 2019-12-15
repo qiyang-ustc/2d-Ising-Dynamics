@@ -4,7 +4,7 @@ using DelimitedFiles
 const L = parse(Int,ARGS[1])
 const dJ = parse(Float64,ARGS[2])
 
-const RANDOM_SEED = 123
+const RANDOM_SEED = 12345
 const D = 2
 const NSAMP = parse(Int,ARGS[3])  #simulated system
 const NBLCK = 8192  #simulation time
